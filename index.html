@@ -21,12 +21,16 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
       const appRoot = document.getElementById('root')
-      const content = 'Hello world'
-      const props ={
-        className: 'container',
-        children: 'Hello world'
-      }
-      const element = <div {...props} />
+      const Message = props => <div>{ props.children }</div>
+      const element = (
+        <div className="container">
+          <Message>
+            SUP
+            <Message>Goodbye</Message>
+            <Message>Goodbye</Message>
+          </Message>
+        </div>
+      )
       ReactDOM.render(element, appRoot)
     </script>
   </body>
